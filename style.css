@@ -1,0 +1,145 @@
+body {
+    height: 100vh;
+    font-family: sans-serif; /* ändra sen */
+}
+
+.page-wrapper {
+    background-image: url("");
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5em;
+}
+
+.nav-container {
+    display: flex;
+    margin-top: 1em;
+    padding: 0 .5em;
+    padding-bottom: 1em;
+    justify-content: center;
+    flex: 0 0 20%;
+    gap: 1em;
+}
+
+.header-title {
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 1.5rem;
+
+    
+}
+
+.search-bar {
+    padding: .5em;
+    border: 1px solid #252525;
+    border-radius: 5px;
+}
+
+.search-bar:focus{
+    outline: 2px solid goldenrod; 
+}
+
+.filter-btn {
+    padding: .5em;
+    width: 4em;
+    border: 1px solid goldenrod;
+    background-color: #fff;
+    border-radius: .2em;
+    box-shadow: .5px .5px 2px rgb(199, 199, 199);
+}
+
+.filter-btn:hover {
+    background-color: goldenrod;
+    color: #fff;
+    transition: .2s;
+}
+.filter-btn:active {
+    background-color: goldenrod;
+}
+
+
+/* Alla kort ligger i page-wrapper */
+
+.main-wrapper {
+    
+}
+
+
+/* card-container är varje enskilt kort*/
+
+.card-container {
+    width: 80%;
+    margin: 2em auto 0 auto;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+}
+
+.example-photo {
+    width: 100%;
+    border-radius: 10px;
+    outline: 3px solid goldenrod;
+}
+
+.card-info {
+    margin-top: .5em;
+
+    font-size: 1.2em;
+}
+
+.card-item-title {
+    display: inline-block;
+    width: 50%;
+
+    font-weight: bold;
+}
+
+.card-item-price {
+    float: right;
+    font-weight: bold;
+    color: darkgreen;
+}
+
+
+/*Tunna strecket under titeln och priset*/
+.card-text::before {
+    content: '';
+    position: absolute;
+    
+    top: -.5em;
+
+    height: 1px;
+    width: 100%;
+    
+    background-color: darkgray;
+}
+
+.card-text {
+    position: relative;
+    margin-top: 1em;
+
+    font-size: 0.8rem;
+}
+
+
+.order-btn {
+    position: fixed;
+
+    right: 4em;
+    bottom: 4em;
+
+    aspect-ratio: 1/1;
+
+    height: 4em;
+
+    border: none;
+    border-radius: 50%;
+
+    font-weight: bold;
+
+    color: white;
+    background-color: #252525;
+}

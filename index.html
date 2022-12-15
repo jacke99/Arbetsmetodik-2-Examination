@@ -13,20 +13,79 @@
       referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css" />
     <script src="app.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap"
+      rel="stylesheet" />
   </head>
   <body>
-    <header class="page-header">
-      <h1 class="header-title">The Kraken Inn</h1>
-      <input class="searchbar" type="text" placeholder="Search..." />
-    </header>
-    <nav>
-      <label for="filter-food">Food</label>
-      <input class="filter-food" type="checkbox" />
+    <div class="page-wrapper">
+      <header class="page-header">
+        <h1 class="header-title">The Kraken Inn</h1>
+        <input class="search-bar" type="text" placeholder="Search..." />
+      </header>
+      <nav class="nav-container">
+        <button class="filter-btn">All</button>
+        <button class="filter-btn">Food</button>
+        <button class="filter-btn">Drinks</button>
+      </nav>
+      <main class="main-wrapper">
+        <article class="card-container">
+          <img
+            src="anh-nguyen-kcA-c3f_3FE-unsplash-2.jpg"
+            class="example-photo"
+            alt="image" />
+          <div class="card-info">
+            <header>
+              <h4 class="card-item-title">Poke Bowl</h4>
+              <h4 class="card-item-price">$19.99</h4>
+            </header>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem et
+              illum enim! Nostrum, at labore. Error dolores dicta consectetur
+              corporis?
+            </p>
+          </div>
+        </article>
 
-      <label for="filter-drinks">Drinks</label>
-      <input class="filter-drinks" type="checkbox" />
-    </nav>
-    <main class="page-wrapper"></main>
-    <button class="order-btn">Order now</button>
+        <article class="card-container">
+          <img
+            src="anh-nguyen-kcA-c3f_3FE-unsplash-2.jpg"
+            class="example-photo"
+            alt="image" />
+          <div class="card-info">
+            <header>
+              <h4 class="card-item-title">Poke Bowl</h4>
+              <h4 class="card-item-price">$19.99</h4>
+            </header>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem et
+              illum enim! Nostrum, at labore. Error dolores dicta consectetur
+              corporis?
+            </p>
+          </div>
+        </article>
+
+        <article class="card-container">
+          <img
+            src="anh-nguyen-kcA-c3f_3FE-unsplash-2.jpg"
+            class="example-photo"
+            alt="image" />
+          <div class="card-info">
+            <header>
+              <h4 class="card-item-title">Poke Bowl</h4>
+              <h4 class="card-item-price">$19.99</h4>
+            </header>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem et
+              illum enim! Nostrum, at labore. Error dolores dicta consectetur
+              corporis?
+            </p>
+          </div>
+        </article>
+      </main>
+      <button class="order-btn">></button>
+    </div>
   </body>
 </html>
