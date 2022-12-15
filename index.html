@@ -5,14 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Kraken Inn</title>
+    <!-- link Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <!-- link meyer -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
       integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer" />
+    <!-- link Fonts -->
     <link rel="stylesheet" href="style.css" />
     <script src="app.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Port+Lligat+Slab&display=swap"
+      rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -46,6 +60,7 @@
               illum enim! Nostrum, at labore. Error dolores dicta consectetur
               corporis?
             </p>
+            <button class="add-btn">Add</button>
           </div>
         </article>
 
@@ -64,6 +79,7 @@
               illum enim! Nostrum, at labore. Error dolores dicta consectetur
               corporis?
             </p>
+            <button class="add-btn">Add</button>
           </div>
         </article>
 
@@ -82,10 +98,52 @@
               illum enim! Nostrum, at labore. Error dolores dicta consectetur
               corporis?
             </p>
+            <button class="add-btn">Add</button>
+          </div>
+        </article>
+
+        <article class="card-container">
+          <img
+            src="anh-nguyen-kcA-c3f_3FE-unsplash-2.jpg"
+            class="example-photo"
+            alt="image" />
+          <div class="card-info">
+            <header>
+              <h4 class="card-item-title">Poke Bowl</h4>
+              <h4 class="card-item-price">$19.99</h4>
+            </header>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem et
+              illum enim! Nostrum, at labore. Error dolores dicta consectetur
+              corporis?
+            </p>
+            <button class="add-btn">Add</button>
           </div>
         </article>
       </main>
-      <button class="order-btn">></button>
+      <button class="cart-btn">
+        <div class="shopping-cart-dot">5</div>
+        <!--Ändra värde till hur många produkter som är i varukorgen-->
+        <i class="fa-solid fa-cart-shopping"></i>
+      </button>
+    </div>
+    <div class="shopping-cart">
+      <div class="shoppping-cart-container">
+        <header class="shopping-cart-header">
+          <h3 class="shopping-cart-title">Shopping cart</h3>
+        </header>
+        <div class="shopping-list">
+          <!--
+        Beställningar hamnar här
+      -->
+        </div>
+
+        <div class="checkout-container">
+          <p class="total-price">Total: 0</p>
+          <button class="order-btn">Place order</button>
+          <button class="cancel-btn">Cancel</button>
+        </div>
+      </div>
     </div>
   </body>
 </html>

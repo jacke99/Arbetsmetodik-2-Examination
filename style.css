@@ -6,7 +6,10 @@ body {
 }
 
 .page-wrapper {
-    background-image: url("nathan-dumlao-J2gEgTPM_OA-unsplash-2.jpg");
+
+    /*display: none;*/ /* Denna ändras beroende på om vi ska visa shopping-cart eller inte*/
+    
+    background-image: url("josephine-bredehoft-hbCs86vhDA0-unsplash-2.jpg");
     object-fit: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -85,7 +88,7 @@ body {
 
     margin: 2em auto 0 auto;
 
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     line-height: 1.1em;
 
     cursor: pointer;
@@ -95,6 +98,7 @@ body {
     
     background-color: rgba(0, 0, 0, 0.3);
 
+    box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.74); /**/
     
 }
 
@@ -106,8 +110,7 @@ body {
 }
 
 .card-info {
-    padding: .7em;
-
+    padding: .7em .7em 2em .7em;
     font-size: 1.2em;
 }
 
@@ -116,6 +119,7 @@ body {
     width: 50%;
 
     font-weight: bold;
+    font-family: 'Port Lligat Slab', serif;
 }
 
 .card-item-price {
@@ -140,15 +144,31 @@ body {
 
 .card-text {
     position: relative;
+    
     margin-top: 1em;
 
     font-size: 0.8rem;
+    font-family: 'Port Lligat Slab', serif;
+    
+}
+
+.add-btn {
+    float: right;
+    padding: .5em 1.9em;
+
+    border: none;
+    border-radius: 5px;
+
+    font-weight: bold;
+
+    color: white;
+    background-color: green;
 }
 
 
 /* fixerade beställningsknappen*/
 
-.order-btn {
+.cart-btn {
     position: fixed;
 
     right: 4em;
@@ -165,4 +185,70 @@ body {
 
     color: white;
     background-color: #252525;
+
+    cursor:pointer;
+}
+
+/* Röda pricken på shopping-cart knappen */
+.shopping-cart-dot {
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    top: -.5em;
+    right: -.2em;
+
+    width: 40%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: red;
+}
+
+
+
+
+
+
+/*
+    Shopping cart sidan
+*/
+
+.shopping-cart {
+    display: none;
+
+    color: black;
+    background-image: url("paper-png.png");
+    
+
+    width: 100vw;
+    aspect-ratio: 1/1;
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    
+}
+
+.shoppping-cart-container {
+    height: 100%;
+    
+}
+
+.shopping-list {
+    /* height: 12em;
+    width: 16em; */
+}
+.checkout-container{
+    
+}
+
+.order-btn {
+    
+    
+}
+.cancel-btn {
+   
+
 }
