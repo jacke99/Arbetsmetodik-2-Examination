@@ -1,5 +1,7 @@
 const mainWrapper = document.querySelector(".main-wrapper");
 
+const flag = document.querySelector(".flag");
+
 const filterBtnAll = document.querySelector(".filter-btn-all");
 const filterBtnFood = document.querySelector(".filter-btn-food");
 const filterBtnDrinks = document.querySelector(".filter-btn-drinks");
@@ -9,26 +11,41 @@ const allDrinks = db.drinks;
 
 const shoppingCart = [];
 const shoppingCartDot = document.querySelector(".shopping-cart-dot");
+const cartBtn = document.querySelector(".cart-btn");
 
-const priceToFilterBy = 99;
+const orders = document.querySelector(".orders");
+const closeBtn = document.querySelector(".close-order");
 
-/* Loopar igenom all dryck */
+let drinksToDisplay = [];
+let foodToDisplay = [];
 
-allDrinks.forEach((element) => {
-  /* används bara för att korta ner listan */
+let amountOfDrinks = 20;
 
-  if (element.price == priceToFilterBy) {
-    createCard(element.name, element.img, element.price, element.dsc);
+let categorys = Object.keys(db); // Hämtar alla olika kategorier
+
+/* Tar bort det som inte är riktiga mat-kategorier */
+categorys.splice(categorys.indexOf("best-foods"), 1);
+categorys.splice(categorys.indexOf("our-foods"), 1);
+categorys.splice(categorys.indexOf("pagination"), 1);
+
+/* Loopar igenom kategorierna och tar en från varje in till listan, kan ökas till flera */
+for (let i = 0; i < categorys.length; i++) {
+  for (let x = 0; x < 1; x++) {
+    foodToDisplay.push(db[categorys[i]][x]);
   }
+}
+
+// Tar ett antal drycker och stoppar in dom i listan
+for (let i = 0; i < amountOfDrinks; i++) {
+  drinksToDisplay.push(db["drinks"][i]);
+}
+
+foodToDisplay.forEach((element) => {
+  createCard(element.name, element.img, element.price, element.dsc);
 });
 
-/* Loopar igenom alla maträtter */
-
-allFoods.forEach((element) => {
-  /* används bara för att korta ner listan */
-  if (element.price == priceToFilterBy) {
-    createCard(element.name, element.img, element.price, element.dsc);
-  }
+drinksToDisplay.forEach((element) => {
+  createCard(element.name, element.img, element.price, element.dsc);
 });
 
 function createCard(name, img, price, desc) {
@@ -41,7 +58,7 @@ function createCard(name, img, price, desc) {
   <div class="card-info">
     <header>
       <h4 class="card-item-title">${name}</h4>
-      <h4 class="card-item-price">${price}.00$</h4>
+      <h4 class="card-item-price">${price}kr</h4>
     </header>
     <p class="card-text">
       ${desc}
@@ -84,4 +101,26 @@ addBtns.forEach((element) => {
     shoppingCartDot.innerHTML = shoppingCart.length;
     console.log(shoppingCart);
   });
+});
+
+cartBtn.addEventListener("click", () => {
+  cartBtn.style.display = "none";
+  orders.style.display = "flex";
+});
+
+closeBtn.addEventListener("click", () => {
+  orders.style.display = "none";
+  cartBtn.style.display = "block";
+});
+
+flag.addEventListener("click", () => {
+  if (english == true) {
+    // Ändra allt till svenska
+
+    english = false;
+  } else {
+    //Ändra allt till engelska
+
+    english = true;
+  }
 });

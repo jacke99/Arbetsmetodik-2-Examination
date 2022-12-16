@@ -36,39 +36,46 @@
   </head>
   <body>
     <div class="page-wrapper">
-      <header class="page-header">
-        <h1 class="header-title">The Kraken Inn</h1>
-        <input class="search-bar" type="text" placeholder="Search..." />
-      </header>
-      <nav class="nav-container">
-        <button class="filter-btn-all">All</button>
-        <button class="filter-btn-food">Food</button>
-        <button class="filter-btn-drinks">Drinks</button>
-      </nav>
+      <div class="page-menu">
+        <header class="page-header">
+          <h1 class="header-title">The Kraken Inn</h1>
+          <div class="flag">
+            <i class="fa-sharp fa-solid fa-flag-usa"></i>
+          </div>
+          <input class="search-bar" type="text" placeholder="Search..." />
+        </header>
+
+        <nav class="nav-container">
+          <button class="filter-btn-all">All</button>
+          <button class="filter-btn-food">Food</button>
+          <button class="filter-btn-drinks">Drinks</button>
+          <button class="filter-btn-dessert">Dessert</button>
+        </nav>
+      </div>
       <main class="main-wrapper"></main>
       <button class="cart-btn">
         <div class="shopping-cart-dot">0</div>
         <!--Ändra värde till hur många produkter som är i varukorgen-->
-        <i class="fa-solid fa-cart-shopping"></i>
+        <!-- <i class="fa-solid fa-cart-shopping"></i> -->
+        <i class="fa-solid fa-receipt fa-2x"></i>
       </button>
     </div>
-    <div class="shopping-cart">
-      <div class="shoppping-cart-container">
-        <header class="shopping-cart-header">
-          <h3 class="shopping-cart-title">Shopping cart</h3>
-        </header>
-        <div class="shopping-list">
-          <!--
-        Beställningar hamnar här
-      -->
-        </div>
 
-        <div class="checkout-container">
-          <p class="total-price">Total: 0</p>
-          <button class="order-btn">Place order</button>
-          <button class="cancel-btn">Cancel</button>
-        </div>
+    <div class="orders">
+      <p class="orders-balance">
+        SALDO: 0
+        <input class="add-balance" type="number" placeholder="+" submit />
+      </p>
+      <div class="orders-container">
+        <!--kvitto ordrar hamnar här-->
+        <p>Joe's KC Ribs, Brisket & Burnt Ends</p>
+        <p>Joe's KC Ribs, Brisket & Burnt Ends</p>
+        <p>Joe's KC Ribs, Brisket & Burnt Ends</p>
+        <p>Joe's KC Ribs, Brisket & Burnt Ends</p>
+        <p>Joe's KC Ribs, Brisket & Burnt Ends</p>
+        <p>Joe's KC Ribs, Brisket & Burnt Ends</p>
       </div>
+      <button class="close-order">Close</button>
     </div>
   </body>
 </html>
