@@ -10,10 +10,8 @@ body {
     /*display: none;*/ /* Denna ändras beroende på om vi ska visa shopping-cart eller inte*/
     
     background-image: url("josephine-bredehoft-hbCs86vhDA0-unsplash-2.jpg");
-    object-fit: contain;
-    background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: contain;
 }
 
 .page-header {
@@ -44,13 +42,14 @@ body {
     padding: .5em;
     border: 1px solid #252525;
     border-radius: 5px;
+    
 }
 
 .search-bar:focus{
     outline: 2px solid goldenrod; 
 }
 
-.filter-btn {
+.filter-btn-all .filter-btn-food .filter-btn-drinks {
     padding: .5em;
     width: 4em;
     font-size: .7rem;
