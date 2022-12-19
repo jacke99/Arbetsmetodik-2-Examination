@@ -2,6 +2,8 @@ const mainWrapper = document.querySelector(".main-wrapper");
 const searchBar = document.querySelector(".search-bar");
 
 const flag = document.querySelector(".flag");
+const england = document.querySelector(".england");
+const sweden = document.querySelector(".sweden");
 let english = true;
 
 const filterBtnAll = document.querySelector(".filter-btn-all");
@@ -321,6 +323,8 @@ flag.addEventListener("click", () => {
       element.innerText = "Köp";
     });
 
+    england.style.display = "none";
+    sweden.style.display = "block";
     english = false;
   } else {
     //Ändra allt till engelska
@@ -334,6 +338,9 @@ flag.addEventListener("click", () => {
     addBtns.forEach((element) => {
       element.innerText = "Add";
     });
+
+    england.style.display = "block";
+    sweden.style.display = "none";
 
     english = true;
   }
