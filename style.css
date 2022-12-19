@@ -134,7 +134,7 @@ body {
 
 .card-container {
 
-    width: 80%;
+    width: 60%;
 
     margin: 4em auto 0 auto;
 
@@ -223,7 +223,7 @@ body {
 .cart-btn {
     position: fixed;
 
-    right: 4em;
+    right: 1em;
     bottom: 4em;
 
     aspect-ratio: 1/1;
@@ -327,10 +327,6 @@ body {
 .orders-container {
     display: flex;
     flex-direction: column;
-    
-    background-image: url("paperImage.png");
-    background-size: contain;
-    background-repeat: no-repeat;
 
     height: 80%;
     width: 80%;
@@ -382,4 +378,19 @@ body {
 
 .add-balance:hover {
     width: 3em;
+}
+
+
+
+.rope {
+    position: fixed;
+
+    height: 35%;
+    width: 35%;
+    
+    bottom: 0;
+
+    z-index: 10;
+
+    filter: brightness(80%);
 }

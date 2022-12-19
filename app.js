@@ -149,7 +149,7 @@ function createCard(name, img, price, desc) {
     <p class="card-text">
       ${desc}
     </p>
-    <button class="add-btn">Add</button>
+    <button class="add-btn">${english ? "Add" : "Köp"}</button>
   </div>
     </article>
     `;
@@ -315,6 +315,12 @@ flag.addEventListener("click", () => {
     searchBar.placeholder = "Sök...";
 
     closeBtn.innerText = "Stäng";
+
+    addBtns = document.querySelectorAll(".add-btn");
+    addBtns.forEach((element) => {
+      element.innerText = "Köp";
+    });
+
     english = false;
   } else {
     //Ändra allt till engelska
@@ -323,6 +329,12 @@ flag.addEventListener("click", () => {
     searchBar.placeholder = "Search...";
 
     closeBtn.innerText = "Close";
+
+    addBtns = document.querySelectorAll(".add-btn");
+    addBtns.forEach((element) => {
+      element.innerText = "Add";
+    });
+
     english = true;
   }
 });
