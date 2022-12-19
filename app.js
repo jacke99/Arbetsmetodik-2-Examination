@@ -17,6 +17,7 @@ const cartBtn = document.querySelector(".cart-btn");
 
 const orders = document.querySelector(".orders");
 const ordersBalance = document.querySelector(".orders-balance");
+const orderContainer = document.querySelector(".orders-container");
 const addBalanceInput = document.querySelector(".add-balance");
 let balance = 0;
 const closeBtn = document.querySelector(".close-order");
@@ -49,7 +50,11 @@ for (let i = 0; i < amountOfDrinks; i++) {
   foodAndDrinks.push(db["drinks"][i]);
 }
 
-// Endast mat array
+// Endast mat array, ta bort det som inte är mat
+categorys.splice(categorys.indexOf("chocolates"), 1);
+categorys.splice(categorys.indexOf("drinks"), 1);
+categorys.splice(categorys.indexOf("ice-cream"), 1);
+categorys.splice(categorys.indexOf("desserts"), 1);
 
 for (let i = 0; i < categorys.length; i++) {
   for (let x = 0; x < 1; x++) {
@@ -126,6 +131,7 @@ function addAllFoods() {
   foodAndDrinks.forEach((element) => {
     createCard(element.name, element.img, element.price, element.dsc);
   });
+  createButtonListeners();
 }
 
 function createCard(name, img, price, desc) {
@@ -153,15 +159,39 @@ function createCard(name, img, price, desc) {
 /* lägger till produkter i varukorgen när man trycker på Add knapparna*/
 
 function createButtonListeners() {
-  addBtns = document.querySelectorAll(".add-btn"); // måste fixas
+  addBtns = document.querySelectorAll(".add-btn");
 
   addBtns.forEach((element) => {
-    element.addEventListener("click", (e) => {
+    element.addEventListener("click", () => {
       let article = element.parentElement;
+      let price = article.querySelector(".card-item-price").innerText;
+      let title = article.querySelector(".card-item-title").innerText;
 
       shoppingCart.push(article);
       shoppingCartDot.innerHTML = shoppingCart.length;
-      console.log(shoppingCart);
+
+      let orderCard = document.createElement("div");
+      orderCard.classList.add("order-card");
+
+      orderCard.innerHTML = `
+      <p>${title}</p>
+      <div>${price}
+        <button class="cart-remove-item">X</button>
+      </div>`;
+
+      orderContainer.append(orderCard);
+
+      orderCard
+        .querySelector(".cart-remove-item")
+        .addEventListener("click", () => {
+          orderCard.remove();
+          shoppingCart.splice(shoppingCart.indexOf(article), 1);
+          shoppingCartDot.innerHTML = shoppingCart.length;
+        });
+
+      setTimeout(() => {
+        orderCard.querySelector(".cart-remove-item").remove();
+      }, 120000);
     });
   });
 }
@@ -177,11 +207,11 @@ FILTRERINGS KNAPPARNA
 //Visa allt...
 filterBtnAll.addEventListener("click", (e) => {
   addAllFoods();
-  createButtonListeners();
   searchBar.value = "";
+  location.href = "#";
 });
 
-//visa bara mat...
+//visa BARA mat...
 filterBtnFood.addEventListener("click", (e) => {
   removeAllCards();
   allFood.forEach((element) => {
@@ -189,6 +219,7 @@ filterBtnFood.addEventListener("click", (e) => {
   });
   createButtonListeners();
   searchBar.value = "";
+  location.href = "#";
 });
 
 // Visa bara dryck
@@ -200,6 +231,7 @@ filterBtnDrinks.addEventListener("click", (e) => {
   });
   createButtonListeners();
   searchBar.value = "";
+  location.href = "#";
 });
 
 // Visa bara efterrätt
@@ -210,6 +242,7 @@ filterBtnDessert.addEventListener("click", (e) => {
   });
   createButtonListeners();
   searchBar.value = "";
+  location.href = "#";
 });
 
 /*
@@ -263,6 +296,7 @@ searchBar.addEventListener("keypress", function (event) {
 
     searchResult.forEach((element) => {
       createCard(element.name, element.img, element.price, element.dsc);
+      createButtonListeners();
     });
   }
 });
