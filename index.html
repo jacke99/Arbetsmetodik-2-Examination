@@ -38,28 +38,47 @@
     <div class="page-wrapper">
       <div class="page-menu">
         <header class="page-header">
+          <img class="logo" src="logo-krakensInnThin.png" alt="logo" />
           <h1 class="header-title">The Kraken Inn</h1>
           <div class="flag">
-            <i class="fa-sharp fa-solid fa-flag-usa"></i>
+            <img
+              src="sweden_round_icon_256.png"
+              alt="swedenflag"
+              class="sweden" />
+            <img
+              src="united_kingdom_round_icon_256.png"
+              alt="england"
+              class="england" />
+            <!-- <i class="fa-sharp fa-solid fa-flag-usa"></i> -->
           </div>
           <input class="search-bar" type="text" placeholder="Search..." />
         </header>
 
         <nav class="nav-container">
-          <button class="filter-btn-all">All</button>
-          <button class="filter-btn-food">Food</button>
-          <button class="filter-btn-drinks">Drinks</button>
-          <button class="filter-btn-dessert">Dessert</button>
+          <button class="filter-btn-all" title="Everything on our menu">
+            All
+          </button>
+          <button class="filter-btn-food" title="Foods">
+            <i class="fa-solid fa-bowl-food"></i>
+          </button>
+          <button class="filter-btn-drinks" title="Drinks">
+            <i class="fa-solid fa-glass-water"></i>
+          </button>
+          <button class="filter-btn-dessert" title="Desserts">
+            <i class="fa-solid fa-ice-cream"></i>
+          </button>
         </nav>
       </div>
       <main class="main-wrapper"></main>
-      <button class="cart-btn">
+      <button class="cart-btn" title="Receipt">
         <div class="shopping-cart-dot">0</div>
         <!--Ändra värde till hur många produkter som är i varukorgen-->
         <!-- <i class="fa-solid fa-cart-shopping"></i> -->
         <i class="fa-solid fa-receipt fa-2x"></i>
       </button>
     </div>
+
+    <img src="pngwing2.png" alt="" class="rope" />
 
     <div class="orders">
       <div class="balance-container">
@@ -69,14 +88,9 @@
 
       <div class="orders-container">
         <!--kvitto ordrar hamnar här-->
-        <p>Joe's KC Ribs, Brisket & Burnt Ends <span>: 110:99kr</span></p>
-        <p>Joe's KC Ribs, Brisket & Burnt Ends <span>: 110:99kr</span></p>
-        <p>Joe's KC Ribs, Brisket & Burnt Ends <span>: 110:99kr</span></p>
-        <p>Joe's KC Ribs, Brisket & Burnt Ends <span>: 110:99kr</span></p>
-        <p>Joe's KC Ribs, Brisket & Burnt Ends <span>: 110:99kr</span></p>
-        <p>Joe's KC Ribs, Brisket & Burnt Ends <span>: 110:99kr</span></p>
       </div>
-      <button class="close-order">Close</button>
+      <div class="order-total">Total: 0</div>
+      <button class="close-order" title="Close">Close</button>
     </div>
   </body>
 </html>
