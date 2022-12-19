@@ -124,6 +124,54 @@ addBtns.forEach((element) => {
   });
 });
 
+/*
+
+
+FILTRERINGS KNAPPARNA
+
+
+*/
+
+//Visa allt...
+filterBtnAll.addEventListener("click", addAllFoods);
+
+//visa bara mat...
+filterBtnFood.addEventListener("click", (e) => {
+  removeAllCards();
+  for (let i = 0; i < categorys.length; i++) {
+    for (let x = 0; x < 1; x++) {
+      foodToDisplay.push(db[categorys[i]][x]);
+    }
+  }
+
+  foodToDisplay.forEach((element) => {
+    createCard(element.name, element.img, element.price, element.dsc);
+  });
+});
+
+// Visa bara dryck
+filterBtnDrinks.addEventListener("click", (e) => {
+  removeAllCards();
+  for (let i = 0; i < amountOfDrinks; i++) {
+    drinksToDisplay.push(db["drinks"][i]);
+  }
+  drinksToDisplay.forEach((element) => {
+    createCard(element.name, element.img, element.price, element.dsc);
+  });
+});
+
+// Visa bara efterrätt
+filterBtnDessert.addEventListener("click", (e) => {
+  removeAllCards();
+
+  foodToDisplay.push(db["desserts"][0]);
+  foodToDisplay.push(db["ice-cream"][0]);
+
+  foodToDisplay.forEach((element) => {
+    createCard(element.name, element.img, element.price, element.dsc);
+  });
+});
+
 cartBtn.addEventListener("click", () => {
   cartBtn.style.display = "none";
   orders.style.display = "flex";
