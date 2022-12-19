@@ -194,6 +194,13 @@ addBalanceInput.addEventListener("keypress", (event) => {
   }
 });
 
+/* inputfield enter keypress */
+searchBar.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+  }
+});
+
 /*
   
   
