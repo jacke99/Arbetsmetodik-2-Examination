@@ -56,8 +56,6 @@ body {
 .header-title {
     font-family: 'Berkshire Swash', cursive;
     font-size: 1.5rem;
-
-    
 }
 
 .search-bar {
@@ -251,6 +249,13 @@ body {
     border-radius: 5px;
     background-color: rgba(73, 41, 0, 0.9);
 }
+.balance-container {
+    display: flex;
+    position: absolute;
+    top: 1em;
+    left: 1em;
+}
+
 
 .orders-container {
     background-color: #111;
@@ -280,13 +285,13 @@ body {
     background-color: rgb(168, 1, 1);
     
 }
-.orders-balance {
+/* .orders-balance {
     position: absolute;
     top: 1em;
     left: 1em;
-}
+} */
 .add-balance {
-    width: .8em;
+    width: 1em;
     text-align: center;
 }
 
