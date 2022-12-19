@@ -5,28 +5,78 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Kraken Inn</title>
+    <!-- link Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <!-- link meyer -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
       integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer" />
+    <!-- link Fonts -->
     <link rel="stylesheet" href="style.css" />
+    <script src="db.js" defer></script>
     <script src="app.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Port+Lligat+Slab&display=swap"
+      rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap"
+      rel="stylesheet" />
   </head>
   <body>
-    <header class="page-header">
-      <h1 class="header-title">The Kraken Inn</h1>
-      <input class="searchbar" type="text" placeholder="Search..." />
-    </header>
-    <nav>
-      <label for="filter-food">Food</label>
-      <input class="filter-food" type="checkbox" />
+    <div class="page-wrapper">
+      <div class="page-menu">
+        <header class="page-header">
+          <h1 class="header-title">The Kraken Inn</h1>
+          <div class="flag">
+            <i class="fa-sharp fa-solid fa-flag-usa"></i>
+          </div>
+          <input class="search-bar" type="text" placeholder="Search..." />
+        </header>
 
-      <label for="filter-drinks">Drinks</label>
-      <input class="filter-drinks" type="checkbox" />
-    </nav>
-    <main class="page-wrapper"></main>
-    <button class="order-btn">Order now</button>
+        <nav class="nav-container">
+          <button class="filter-btn-all">All</button>
+          <button class="filter-btn-food">Food</button>
+          <button class="filter-btn-drinks">Drinks</button>
+          <button class="filter-btn-dessert">Dessert</button>
+        </nav>
+      </div>
+      <main class="main-wrapper"></main>
+      <button class="cart-btn">
+        <div class="shopping-cart-dot">0</div>
+        <!--Ändra värde till hur många produkter som är i varukorgen-->
+        <!-- <i class="fa-solid fa-cart-shopping"></i> -->
+        <i class="fa-solid fa-receipt fa-2x"></i>
+      </button>
+    </div>
+
+    <div class="orders">
+      <div class="balance-container">
+        <p class="orders-balance">SALDO: 0</p>
+        <input class="add-balance" type="number" placeholder="+" />
+      </div>
+
+      <div class="orders-container">
+        <!--kvitto ordrar hamnar här-->
+        <p>Joe's KC Ribs, Brisket & Burnt Ends <span>: 110:99kr</span></p>
+        <p>Joe's KC Ribs, Brisket & Burnt Ends <span>: 110:99kr</span></p>
+        <p>Joe's KC Ribs, Brisket & Burnt Ends <span>: 110:99kr</span></p>
+        <p>Joe's KC Ribs, Brisket & Burnt Ends <span>: 110:99kr</span></p>
+        <p>Joe's KC Ribs, Brisket & Burnt Ends <span>: 110:99kr</span></p>
+        <p>Joe's KC Ribs, Brisket & Burnt Ends <span>: 110:99kr</span></p>
+      </div>
+      <button class="close-order">Close</button>
+    </div>
   </body>
 </html>
