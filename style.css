@@ -403,3 +403,39 @@ body {
 
     filter: brightness(80%);
 }
+ 
+
+
+
+
+
+/*----Desktop---*/
+
+@media screen and (min-width: 780px) { 
+
+  .main-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 30%;
+    
+    
+  }
+
+  .page-header {
+   width: 40%;
+   margin: 0 auto;
+   height: 280px;
+   display: flex;
+   flex-direction: column;
+
+  }
+
+  .search-bar {
+    max-width: fit-content;
+    
+  } 
+
+
+
+}
