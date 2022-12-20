@@ -1,6 +1,8 @@
 const mainWrapper = document.querySelector(".main-wrapper");
 const searchBar = document.querySelector(".search-bar");
 
+const pageWrapper = document.querySelector(".page-wrapper");
+
 const flag = document.querySelector(".flag");
 const england = document.querySelector(".england");
 const sweden = document.querySelector(".sweden");
@@ -21,6 +23,8 @@ const orders = document.querySelector(".orders");
 const ordersBalance = document.querySelector(".orders-balance");
 const orderContainer = document.querySelector(".orders-container");
 const addBalanceInput = document.querySelector(".add-balance");
+const increase = document.querySelector(".increase");
+const decrease = document.querySelector(".decrease");
 const orderTotal = document.querySelector(".order-total");
 let balance = 500;
 let totalPrice = 0;
@@ -230,6 +234,14 @@ addBalanceInput.addEventListener("keypress", (event) => {
   }
 });
 
+increase.addEventListener("click", (event) => {
+  addBalanceInput.value++;
+});
+
+decrease.addEventListener("click", (event) => {
+  addBalanceInput.value--;
+});
+
 function updateBalance() {
   ordersBalance.textContent = `Saldo: ${balance}`;
   orderTotal.innerText = `Total: ${totalPrice}`;
@@ -291,11 +303,13 @@ visar och döljer kvittocontainern
 cartBtn.addEventListener("click", () => {
   cartBtn.style.display = "none";
   orders.style.display = "flex";
+  pageWrapper.style.webkitFilter = "blur(3px)";
 });
 
 closeBtn.addEventListener("click", () => {
   orders.style.display = "none";
   cartBtn.style.display = "block";
+  pageWrapper.style.webkitFilter = "none";
 });
 
 /*
