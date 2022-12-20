@@ -21,7 +21,9 @@ const orders = document.querySelector(".orders");
 const ordersBalance = document.querySelector(".orders-balance");
 const orderContainer = document.querySelector(".orders-container");
 const addBalanceInput = document.querySelector(".add-balance");
-let balance = 0;
+const orderTotal = document.querySelector(".order-total");
+let balance = 500;
+let totalPrice = 0;
 const closeBtn = document.querySelector(".close-order");
 
 let drinksToDisplay = [];
@@ -167,35 +169,70 @@ function createButtonListeners() {
     element.addEventListener("click", () => {
       let article = element.parentElement;
       let price = article.querySelector(".card-item-price").innerText;
+      price = price.slice(0, -2);
+
       let title = article.querySelector(".card-item-title").innerText;
 
-      shoppingCart.push(article);
-      shoppingCartDot.innerHTML = shoppingCart.length;
+      if (balance < parseInt(price)) {
+        alert("Väligen lägg till ett kort/saldo");
+      } else {
+        shoppingCart.push(article);
+        shoppingCartDot.innerHTML = shoppingCart.length;
 
-      let orderCard = document.createElement("div");
-      orderCard.classList.add("order-card");
+        let orderCard = document.createElement("div");
+        orderCard.classList.add("order-card");
 
-      orderCard.innerHTML = `
-      <p>${title}</p>
-      <div>${price}
-        <button class="cart-remove-item">X</button>
-      </div>`;
+        orderCard.innerHTML = `
+        <p>${title}</p>
+        <div>${price}
+          <button class="cart-remove-item">X</button>
+        </div>`;
 
-      orderContainer.append(orderCard);
+        calcTotalPrice(price);
+        balance -= parseInt(price);
+        console.log(balance);
+        orderContainer.append(orderCard);
 
-      orderCard
-        .querySelector(".cart-remove-item")
-        .addEventListener("click", () => {
-          orderCard.remove();
-          shoppingCart.splice(shoppingCart.indexOf(article), 1);
-          shoppingCartDot.innerHTML = shoppingCart.length;
-        });
+        orderCard
+          .querySelector(".cart-remove-item")
+          .addEventListener("click", () => {
+            orderCard.remove();
+            shoppingCart.splice(shoppingCart.indexOf(article), 1);
+            shoppingCartDot.innerHTML = shoppingCart.length;
+            balance += parseInt(price);
+            totalPrice -= parseInt(price);
+            updateBalance();
+            console.log(balance);
+          });
 
-      setTimeout(() => {
-        orderCard.querySelector(".cart-remove-item").remove();
-      }, 120000);
+        setTimeout(() => {
+          orderCard.querySelector(".cart-remove-item").remove();
+        }, 120000);
+      }
+      updateBalance();
     });
   });
+}
+
+function calcTotalPrice(price) {
+  price.slice(price.indexOf("k", 2));
+  totalPrice += parseInt(price);
+
+  updateBalance();
+}
+
+addBalanceInput.addEventListener("keypress", (event) => {
+  if (event.key == "Enter") {
+    balance += parseInt(addBalanceInput.value);
+
+    updateBalance();
+    addBalanceInput.value = "";
+  }
+});
+
+function updateBalance() {
+  ordersBalance.textContent = `Saldo: ${balance}`;
+  orderTotal.innerText = `Total: ${totalPrice}`;
 }
 
 /*
@@ -261,18 +298,6 @@ closeBtn.addEventListener("click", () => {
   cartBtn.style.display = "block";
 });
 
-addBalanceInput.addEventListener("keypress", (event) => {
-  if (event.key == "Enter") {
-    if (balance == 0) {
-      balance = parseInt(addBalanceInput.value);
-    } else {
-      balance += parseInt(addBalanceInput.value);
-    }
-    ordersBalance.textContent = `Saldo: ${balance}`;
-    addBalanceInput.value = "";
-  }
-});
-
 /*
 
 
@@ -289,7 +314,10 @@ searchBar.addEventListener("keypress", function (event) {
     let searchResult = [];
 
     foodAndDrinks.forEach((element) => {
-      if (element.name.toLowerCase().includes(query.toLowerCase())) {
+      if (
+        element.name.toLowerCase().includes(query.toLowerCase()) ||
+        element.dsc.toLowerCase().includes(query.toLowerCase())
+      ) {
         searchResult.push(element);
       }
     });
