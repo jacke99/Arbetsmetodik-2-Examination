@@ -21,8 +21,9 @@
       referrerpolicy="no-referrer" />
     <!-- link Fonts -->
     <link rel="stylesheet" href="style.css" />
-    <script src="db.js" defer></script>
-    <script src="app.js" defer></script>
+
+    <script src="src/db.js" defer></script>
+    <script src="src/app.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -38,45 +39,78 @@
     <div class="page-wrapper">
       <div class="page-menu">
         <header class="page-header">
+          <img class="logo" src="assets/logo-krakensInnThin.png" alt="logo" />
           <h1 class="header-title">The Kraken Inn</h1>
           <div class="flag">
-            <i class="fa-sharp fa-solid fa-flag-usa"></i>
+            <img
+              src="assets/sweden_round_icon_256.png"
+              alt="swedenflag"
+              class="sweden" />
+            <img
+              src="assets/united_kingdom_round_icon_256.png"
+              alt="england"
+              class="england" />
+            <!-- <i class="fa-sharp fa-solid fa-flag-usa"></i> -->
           </div>
           <input class="search-bar" type="text" placeholder="Search..." />
         </header>
 
         <nav class="nav-container">
-          <button class="filter-btn-all">All</button>
-          <button class="filter-btn-food">Food</button>
-          <button class="filter-btn-drinks">Drinks</button>
-          <button class="filter-btn-dessert">Dessert</button>
+          <button class="filter-btn-all" title="Everything on our menu">
+            All
+          </button>
+          <button class="filter-btn-food" title="Foods">
+            <i class="fa-solid fa-bowl-food"></i>
+          </button>
+          <button class="filter-btn-drinks" title="Drinks">
+            <i class="fa-solid fa-glass-water"></i>
+          </button>
+          <button class="filter-btn-dessert" title="Desserts">
+            <i class="fa-solid fa-ice-cream"></i>
+          </button>
         </nav>
       </div>
       <main class="main-wrapper"></main>
-      <button class="cart-btn">
+      <button class="cart-btn" title="Receipt">
         <div class="shopping-cart-dot">0</div>
         <!--Ändra värde till hur många produkter som är i varukorgen-->
         <!-- <i class="fa-solid fa-cart-shopping"></i> -->
-        <i class="fa-solid fa-receipt fa-2x"></i>
+        <!-- <i class="fa-solid fa-receipt fa-2x"></i> -->
+        <i class="fa-solid fa-book-skull"></i>
       </button>
     </div>
 
+    <img src="assets/pngwing2.png" alt="" class="rope" />
+
     <div class="orders">
+      <img class="orders-img" src="assets/paperwall.png" alt="" />
+      <header class="order-header">
+        <p class="orders-balance">SALDO: 0
+
+        
+        </p>
+        <button class="close-order" title="Close window">
+          <!-- <i class="fa-regular fa-skull-crossbones"></i> -->
+          <i class="fa-solid fa-skull-crossbones"></i>
+        </button>
+      </header>
       <div class="balance-container">
-        <p class="orders-balance">SALDO: 0</p>
-        <input class="add-balance" type="number" placeholder="+" />
+        
+        
+        
+        <button class="decrease">-</button>
+        <input type="text" class="add-balance" placeholder="Fyll på Saldo"/>
+        <button class="increase">+</button>
       </div>
 
       <div class="orders-container">
         <!--kvitto ordrar hamnar här-->
-        <p>Joe's KC Ribs, Brisket & Burnt Ends <span>: 110:99kr</span></p>
-        <p>Joe's KC Ribs, Brisket & Burnt Ends <span>: 110:99kr</span></p>
-        <p>Joe's KC Ribs, Brisket & Burnt Ends <span>: 110:99kr</span></p>
-        <p>Joe's KC Ribs, Brisket & Burnt Ends <span>: 110:99kr</span></p>
-        <p>Joe's KC Ribs, Brisket & Burnt Ends <span>: 110:99kr</span></p>
-        <p>Joe's KC Ribs, Brisket & Burnt Ends <span>: 110:99kr</span></p>
       </div>
-      <button class="close-order">Close</button>
+      <div class="order-total">Total: 0</div>
+      
     </div>
+    <a class="take-me-up" href="#">
+      <span class="icon">^</span>
+    </a>
   </body>
 </html>
