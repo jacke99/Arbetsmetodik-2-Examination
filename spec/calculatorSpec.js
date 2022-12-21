@@ -8,7 +8,7 @@ categorys.splice(categorys.indexOf("pagination"), 1);
 describe("Test if food array is being made", function () {
   it("Test if food array is being made", function () {
     array = createArray();
-
+    // Kolla om arrayen med mat är lika lång som kategori arrayen
     expect(array.length).toEqual(categorys.length);
   });
 });

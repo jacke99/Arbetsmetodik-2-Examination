@@ -25,11 +25,12 @@ function getAllAddBtns() {
 
   return btnContainer.querySelectorAll(".add-btn");
 }
-
+// Kolla om korten skapar som dom ska
 function createCard(name, img, price, desc) {
   let cardContainer = document.createElement("div");
   let card;
 
+  // Kolla så
   card = `
     <article class="card-container">
     <img
