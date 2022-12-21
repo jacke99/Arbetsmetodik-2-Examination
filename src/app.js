@@ -109,22 +109,6 @@ foodAndDrinks.forEach((element) => {
   };
 });
 
-/*
-function checkIfImgsLoaded(imgURL) {
-  let image = document.querySelectorAll(".example-photo");
-  const img = document.createElement("img");
-  img.onerror = function () {
-    image.forEach((element) => {
-      if (element.src == imgURL) {
-        console.log("Failed to load " + imgURL);
-        element.parentNode.remove();
-      }
-    });
-  };
-  img.src = imgURL;
-}
-*/
-
 function removeAllCards() {
   /* Tar bort alla befintliga kort*/
   let allExistingCards = document.querySelectorAll(".card-container");
@@ -161,6 +145,7 @@ function createCard(name, img, price, desc) {
   </div>
     </article>
     `;
+
   //checkIfImgsLoaded(img);
 }
 

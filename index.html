@@ -21,8 +21,9 @@
       referrerpolicy="no-referrer" />
     <!-- link Fonts -->
     <link rel="stylesheet" href="style.css" />
-    <script src="db.js" defer></script>
-    <script src="app.js" defer></script>
+
+    <script src="src/db.js" defer></script>
+    <script src="src/app.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -38,15 +39,15 @@
     <div class="page-wrapper">
       <div class="page-menu">
         <header class="page-header">
-          <img class="logo" src="logo-krakensInnThin.png" alt="logo" />
+          <img class="logo" src="assets/logo-krakensInnThin.png" alt="logo" />
           <h1 class="header-title">The Kraken Inn</h1>
           <div class="flag">
             <img
-              src="sweden_round_icon_256.png"
+              src="assets/sweden_round_icon_256.png"
               alt="swedenflag"
               class="sweden" />
             <img
-              src="united_kingdom_round_icon_256.png"
+              src="assets/united_kingdom_round_icon_256.png"
               alt="england"
               class="england" />
             <!-- <i class="fa-sharp fa-solid fa-flag-usa"></i> -->
@@ -79,17 +80,17 @@
       </button>
     </div>
 
-    <img src="pngwing2.png" alt="" class="rope" />
+    <img src="assets/pngwing2.png" alt="" class="rope" />
 
     <div class="orders">
-      <img class="orders-img" src="paperwall.png" alt="" />
+      <img class="orders-img" src="assets/paperwall.png" alt="" />
       <div class="balance-container">
         <!--
         <p class="orders-balance">SALDO: 0</p>
         <input class="add-balance" type="number" placeholder="+" />
         -->
         <button class="decrease">-</button>
-        <input type="number" class="add-balance" />
+        <input type="number" class="orders-balance" placeholder="500kr" />
         <button class="increase">+</button>
       </div>
 
