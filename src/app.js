@@ -228,7 +228,8 @@ decrease.addEventListener("click", (event) => {
 });
 
 function updateBalance() {
-  ordersBalance.textContent = `Saldo: ${balance}`;
+  
+  addBalanceInput.placeholder = balance;
   orderTotal.innerText = `Total: ${totalPrice}`;
 }
 
@@ -292,6 +293,7 @@ cartBtn.addEventListener("click", () => {
 });
 
 closeBtn.addEventListener("click", () => {
+
   orders.style.display = "none";
   cartBtn.style.display = "block";
   pageWrapper.style.webkitFilter = "none";
