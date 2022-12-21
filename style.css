@@ -344,7 +344,7 @@ body {
     display: flex;
     position: absolute;
     align-items: center;
-    top: 1em;
+    bottom: 2em;
     left: 30%;
 
     width: 40%;
@@ -413,7 +413,7 @@ input[type=number] {
 .close-order {
     position: absolute;
     
-    bottom: 2em;
+    bottom: 3em;
     left: calc(50% - 1em);
 
     width: 2em;
