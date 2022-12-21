@@ -84,13 +84,22 @@
 
     <div class="orders">
       <img class="orders-img" src="assets/paperwall.png" alt="" />
+      <header class="order-header">
+        <p class="orders-balance">SALDO: 0
+
+        
+        </p>
+        <button class="close-order" title="Close window">
+          <!-- <i class="fa-regular fa-skull-crossbones"></i> -->
+          <i class="fa-solid fa-skull-crossbones"></i>
+        </button>
+      </header>
       <div class="balance-container">
-        <!--
-        <p class="orders-balance">SALDO: 0</p>
-        <input class="add-balance" type="number" placeholder="+" />
-        -->
+        
+        
+        
         <button class="decrease">-</button>
-        <input type="number" class="add-balance" placeholder="500kr" />
+        <input type="text" class="add-balance" placeholder="Fyll på Saldo"/>
         <button class="increase">+</button>
       </div>
 
@@ -98,10 +107,7 @@
         <!--kvitto ordrar hamnar här-->
       </div>
       <div class="order-total">Total: 0</div>
-      <button class="close-order" title="Close window">
-        <!-- <i class="fa-regular fa-skull-crossbones"></i> -->
-        <i class="fa-solid fa-skull-crossbones"></i>
-      </button>
+      
     </div>
     <a class="take-me-up" href="#">
       <span class="icon">^</span>

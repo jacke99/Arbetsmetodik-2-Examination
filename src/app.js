@@ -26,7 +26,7 @@ const addBalanceInput = document.querySelector(".add-balance");
 const increase = document.querySelector(".increase");
 const decrease = document.querySelector(".decrease");
 const orderTotal = document.querySelector(".order-total");
-let balance = 500;
+let balance = 0;
 let totalPrice = 0;
 const closeBtn = document.querySelector(".close-order");
 
@@ -163,7 +163,7 @@ function createButtonListeners() {
       let title = article.querySelector(".card-item-title").innerText;
 
       if (balance < parseInt(price)) {
-        alert("Väligen lägg till ett kort/saldo");
+        alert("Vänligen lägg till saldo");
       } else {
         shoppingCart.push(article);
         shoppingCartDot.innerHTML = shoppingCart.length;
@@ -210,27 +210,37 @@ function calcTotalPrice(price) {
   updateBalance();
 }
 
-addBalanceInput.addEventListener("keypress", (event) => {
-  if (event.key == "Enter") {
-    balance += parseInt(addBalanceInput.value);
 
+addBalanceInput.addEventListener("keypress", (event) => {
+  if (event.key == "Enter" && !isNaN(parseInt(addBalanceInput.value)) && !addBalanceInput.value.includes("-")) {
+    
+    balance += parseInt(addBalanceInput.value);
+    console.log(addBalanceInput.value)
     updateBalance();
-    addBalanceInput.value = "";
+    addBalanceInput.value = ""; 
+
   }
 });
 
 increase.addEventListener("click", (event) => {
-  addBalanceInput.value++;
+  if (!isNaN(parseInt(addBalanceInput.value) || addBalanceInput.value == "")) {
+    addBalanceInput.value++;
+  }
 });
 
 decrease.addEventListener("click", (event) => {
-  addBalanceInput.value--;
+  //kolla så att det är ett nummer
+  if (!isNaN(parseInt(addBalanceInput.value))) {
+    if(parseInt(addBalanceInput.value) != "" && parseInt(addBalanceInput.value) > 0){
+      addBalanceInput.value--;
+    }
+  }
 });
 
 function updateBalance() {
   
-  addBalanceInput.placeholder = balance;
-  orderTotal.innerText = `Total: ${totalPrice}`;
+  ordersBalance.innerText = "SALDO: " + balance + " kr"; // Ändra denna till saldo p taggen
+  orderTotal.innerText = `Total: ${totalPrice} kr`;
 }
 
 /*
@@ -345,7 +355,6 @@ flag.addEventListener("click", () => {
 
     searchBar.placeholder = "Sök...";
 
-    closeBtn.innerText = "Stäng";
 
     addBtns = document.querySelectorAll(".add-btn");
     addBtns.forEach((element) => {
@@ -361,7 +370,6 @@ flag.addEventListener("click", () => {
 
     searchBar.placeholder = "Search...";
 
-    closeBtn.innerText = "Close";
 
     addBtns = document.querySelectorAll(".add-btn");
     addBtns.forEach((element) => {
