@@ -31,9 +31,6 @@ describe("Testing DOM-features", function () {
       `;
 
     cardContainer.innerHTML = result;
-
-    //console.log(createCard(name, img, price, desc));
-    console.log(createCard(name, img, price, desc));
     expect(createCard(name, img, price, desc)).toEqual(cardContainer);
   });
 });

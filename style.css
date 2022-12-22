@@ -63,8 +63,6 @@ body {
 
 .header-title {
     display: none;
-    /* font-family: 'Berkshire Swash', cursive;
-    font-size: 1.5rem; */
 }
 
 .search-bar {
@@ -111,7 +109,6 @@ body {
 }
 
 .filter-btn-all:hover, .filter-btn-food:hover, .filter-btn-drinks:hover, .filter-btn-dessert:hover {
-    /* background-color: goldenrod; */
     background-color: #c68a31;
     color: #fff;
     transition: .2s;
@@ -121,15 +118,12 @@ body {
     transition: .2s;
 }
 
-
 /* Alla kort ligger i main-wrapper */
-
 
 /* card-container är varje enskilt kort*/
 
 /* ------ Main Styling ------ */
 .card-container {
-
     width: 60%;
 
     margin: 4em auto 0 auto;
@@ -137,21 +131,18 @@ body {
     letter-spacing: 2px;
     line-height: 1.1em;
 
-
     border-radius: 10px;
     border-radius: 10px;
     
     background-color: rgba(0, 0, 0, 0.3);
 
-    box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.74); /**/
-
+    box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.74);
 }
 
 .example-photo {
     width: 100%;
     border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    
+    border-top-left-radius: 10px; 
 }
 
 .card-info {
@@ -172,7 +163,6 @@ body {
     font-weight: bold;
     color: green;
 }
-
 
 /*Tunna strecket under titeln och priset*/
 .card-text::before {
@@ -223,18 +213,17 @@ body {
 
 .cart-btn {
     position: fixed;
-
-    right: 1em;
+    
+    right: 1.3em;
     bottom: 4em;
 
-    aspect-ratio: 1/1;
-
+    width: 2em;
     height: 2em;
 
     border: none;
     border-radius: 50%;
 
-    font-size: 1.5em;
+    font-size: 1.5rem;
     font-weight: bold;
 
     color: white;
@@ -244,6 +233,7 @@ body {
 
     z-index: 2;
 }
+
 
 .cart-btn:hover {
     background-color: #2e2e2e;
@@ -270,7 +260,6 @@ body {
 }
 
 
-
 /* ----- Kvittot ----- */
 
 .orders {
@@ -291,16 +280,12 @@ body {
     border-radius: 10px;
     
     background-color: #252525;
-    /* background-image: url("paperwall.png");
-    background-size: 150%;
-    background-position: center;
-    background-repeat: no-repeat; */
+    
     opacity: 1;
     
 }
 
 .orders-img {
-    /* display: none; */
     position: absolute;
     
     width: 100%;
@@ -386,7 +371,6 @@ body {
     outline: none;
 }
 
-
 .orders-container {
     display: flex;
     flex-direction: column;
@@ -405,7 +389,6 @@ body {
 .orders-container::-webkit-scrollbar { 
     display: none;  /* Safari and Chrome */
 }
-
 
 .orders-container > p {
     margin-bottom: .5em;
@@ -471,8 +454,6 @@ body {
     width: 3em;
 }
 
-
-
 .rope {
     position: fixed;
 
@@ -497,11 +478,9 @@ body {
        
 }
 .take-me-up:hover {
-    text-decoration: none;
-    
+    text-decoration: none; 
 }
  
-
 
 /* ------ Desktop Styling ------ */
 
@@ -516,32 +495,28 @@ body {
     margin: 0 auto;
 
     gap: 1em;
-    
   }
 
   .logo {
     width: 40%;
     margin: 0 30%;
   }
+
   .page-header {
    width: 40%;
    margin: 0 auto;
    height: 80%;
    display: flex;
-   
-
   }
 
   .search-bar {
     width: 80%;
-    
   } 
 
   .card-container {
-    /*width: 15em;*/
     flex: 0 1 20em;
-
   }
+  
   .rope {
     display: none;
   }
