@@ -86,8 +86,6 @@ foodAndDrinks.forEach((element) => {
   const img = document.createElement("img");
   img.src = element.img;
   img.onerror = function () {
-    console.log("Failed to load " + element.img);
-    // console.log("Index of failed: " + foodAndDrinks.indexOf(element));
 
     if (foodAndDrinks.includes(element)) {
       foodAndDrinks.splice(foodAndDrinks.indexOf(element), 1);
@@ -145,8 +143,6 @@ function createCard(name, img, price, desc) {
   </div>
     </article>
     `;
-
-  //checkIfImgsLoaded(img);
 }
 
 /* lägger till produkter i varukorgen när man trycker på Add knapparna*/
@@ -239,7 +235,7 @@ decrease.addEventListener("click", (event) => {
 
 function updateBalance() {
   
-  ordersBalance.innerText = "SALDO: " + balance + " kr"; // Ändra denna till saldo p taggen
+  ordersBalance.innerText = "SALDO: " + balance + " kr";
   orderTotal.innerText = `Total: ${totalPrice} kr`;
 }
 
@@ -293,7 +289,9 @@ filterBtnDessert.addEventListener("click", (e) => {
 });
 
 /*
-visar och döljer kvittocontainern
+
+Visar och döljer kvittocontainern
+
 */
 
 cartBtn.addEventListener("click", () => {
