@@ -125,24 +125,46 @@ function addAllFoods() {
 }
 
 function createCard(name, img, price, desc) {
-  mainWrapper.innerHTML += `
-  <article class="card-container">
-  <img
-    src="${img}"
-    class="example-photo"
-    alt="image"/>
-  <div class="card-info">
-    <header>
-      <h4 class="card-item-title">${name}</h4>
-      <h4 class="card-item-price">${price}kr</h4>
-    </header>
-    <p class="card-text">
-      ${desc}
-    </p>
-    <button class="add-btn">${english ? "Add" : "Köp"}</button>
-  </div>
-    </article>
-    `;
+  if(name == "Joe's KC BBQ" || name == "New Territories" || name == "Killer Brownie®") {
+    mainWrapper.innerHTML += `
+    <article class="card-container featured">
+    <img
+      src="${img}"
+      class="example-photo"
+      alt="image"/>
+    <div class="card-info">
+      <header>
+        <h4 class="card-item-title">${name}</h4>
+        <h4 class="card-item-price">${price}kr</h4>
+      </header>
+      <p class="card-text">
+        ${desc}
+      </p>
+      <button class="add-btn">${english ? "Add" : "Köp"}</button>
+    </div>
+      </article>
+      `;
+  } else {
+    mainWrapper.innerHTML += `
+    <article class="card-container">
+    <img
+      src="${img}"
+      class="example-photo"
+      alt="image"/>
+    <div class="card-info">
+      <header>
+        <h4 class="card-item-title">${name}</h4>
+        <h4 class="card-item-price">${price}kr</h4>
+      </header>
+      <p class="card-text">
+        ${desc}
+      </p>
+      <button class="add-btn">${english ? "Add" : "Köp"}</button>
+    </div>
+      </article>
+      `;
+  }
+  
 }
 
 /* lägger till produkter i varukorgen när man trycker på Add knapparna*/
@@ -192,7 +214,7 @@ function createButtonListeners() {
 
         setTimeout(() => {
           orderCard.querySelector(".cart-remove-item").remove();
-        }, 120000);
+        }, 4000);
       }
       updateBalance();
     });
