@@ -214,7 +214,7 @@ function createButtonListeners() {
 
         setTimeout(() => {
           orderCard.querySelector(".cart-remove-item").remove();
-        }, 4000);
+        }, 120000);
       }
       updateBalance();
     });
